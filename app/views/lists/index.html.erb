@@ -1,8 +1,9 @@
 <div class="container">
   <h1>Watch List</h1>
-    <ul>
+  <ul>
     <% @lists.each do |list| %>
       <li><%= link_to list.name, list_path(list) %></li>
+      <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
     <% end %>
   </ul>
   <%= link_to 'Create List', new_list_path %>
